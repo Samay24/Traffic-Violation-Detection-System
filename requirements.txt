@@ -6,4 +6,5 @@ numpy
 matplotlib
 opencv-python
 ultralytics
+easyocr
 gunicorn
