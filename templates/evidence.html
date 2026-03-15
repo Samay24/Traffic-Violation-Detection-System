@@ -1,0 +1,20 @@
+<h2>Violation Evidence</h2>
+
+<div style="display:flex;flex-wrap:wrap">
+
+{% for v in violations %}
+
+<div style="margin:20px">
+
+<h4>{{v.violation_type}}</h4>
+
+<img src="{{ url_for('static', filename='evidence/'+v.evidence_file) }}"
+width="300">
+
+<p>{{v.timestamp}}</p>
+
+</div>
+
+{% endfor %}
+
+</div>

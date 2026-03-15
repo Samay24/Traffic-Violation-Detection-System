@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Violation History</h1>
+
+{% if violations %}
+    {% for v in violations %}
+        <div style="margin-bottom:30px;">
+            <p>
+                <strong>{{ v.violation_type }}</strong><br>
+                Video: {{ v.video_name }}<br>
+                Time: {{ v.timestamp }}
+            </p>
+
+            <img src="{{ url_for('static', filename='evidence/' + v.evidence_file) }}"
+                 width="400">
+        </div>
+        <hr>
+    {% endfor %}
+{% else %}
+    <p>No violations detected yet.</p>
+{% endif %}
+
+{% endblock %}

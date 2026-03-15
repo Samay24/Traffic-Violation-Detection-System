@@ -1,0 +1,25 @@
+<h2>Live Detection Running...</h2>
+
+<img id="videoStream"
+     src="{{ url_for('video_feed', video=video, type=type) }}"
+     width="900">
+
+<br><br>
+
+<a href="/dashboard">Go to Dashboard</a>
+
+<script>
+
+// get video stream element
+const stream = document.getElementById("videoStream");
+
+// when stream stops (video finished)
+stream.onerror = function() {
+
+    console.log("Video finished processing");
+
+    // redirect to dashboard
+    window.location.href = "/dashboard";
+}
+
+</script>

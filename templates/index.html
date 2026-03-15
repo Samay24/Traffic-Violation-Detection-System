@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Violation Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>🚦 Traffic Violation Detection System</h1>
+    <p>AI Powered Monitoring Dashboard</p>
+
+    <!-- ✅ FORM START -->
+    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+
+        <div class="card">
+
+            <div class="file-box">
+                <input type="file" name="video" required>
+            </div>
+
+            <div class="select-box">
+                <select name="type" required>
+                    <option value="Helmet">Helmet</option>
+                    <option value="Wrong Lane">Wrong Lane</option>
+                    <option value="Overspeed">Overspeed</option>
+                    <option value="Red Light">Red Light</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Run Detection</button>
+
+        </div>
+
+    </form>
+    <!-- ✅ FORM END -->
+
+    <div class="loader" id="loader"></div>
+
+    <br>
+    <a href="/dashboard" class="link">Go to Dashboard →</a>
+
+</div>
+
+<script>
+const form = document.getElementById('uploadForm');
+const loader = document.getElementById('loader');
+
+form.addEventListener('submit', function() {
+    loader.style.display = "block";
+});
+</script>
+
+</body>
+</html>

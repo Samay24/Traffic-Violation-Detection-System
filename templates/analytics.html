@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Traffic Analytics</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h2>Traffic Violation Analytics</h2>
+
+<canvas id="analyticsChart"></canvas>
+
+<script>
+
+var ctx = document.getElementById("analyticsChart");
+
+new Chart(ctx,{
+
+type:"bar",
+
+data:{
+labels:["Helmet","Overspeed","Wrong Lane","Red Light"],
+datasets:[{
+label:"Violations",
+data:[{{helmet}},{{overspeed}},{{wronglane}},{{redlight}}],
+backgroundColor:["red","orange","purple","blue"]
+}]
+}
+
+});
+
+</script>
+
+</body>
+</html>
