@@ -7,4 +7,5 @@ matplotlib
 opencv-python
 ultralytics
 easyocr
+reportlab
 gunicorn
